@@ -12,7 +12,5 @@
 
 ## HowTo
 
-- Build image with build_image.sh
-- Run image and execute build_static.sh in container
-- Copy executable out of container
- ```sudo docker cp <containername>:/home/<user>/BUILD/KeyFinderGui_static/is_KeyFinder/KeyFinder ./KeyFinder ```
+- Clone/Pull this repository.
+- execute ```build_static_binary_in_container.sh``` as a user with sufficient rights to use the docker.service. This scripts builds an image, which contains all the sources,runs the container and compiles the software in the container, and finally copies the executable out of the container.
