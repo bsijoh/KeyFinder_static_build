@@ -1,4 +1,4 @@
-FROM opensuse/leap
+FROM opensuse/leap:42.3
 
 LABEL description="Image to try static build of keyfinder."
 
