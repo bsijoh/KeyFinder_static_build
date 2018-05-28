@@ -14,7 +14,12 @@ docker build \
     --build-arg user=$user \
     --tag $user/static_build_keyfinder:$DATE .
  
-docker run -ti $user/static_build_keyfinder:$DATE /home/$user/BUILD/build_static.sh
+# --security-opt seccomp:unconfined is needed
+# see https://bugreports.qt.io/browse/QTBUG-66930
+docker run \
+    -ti \
+    --security-opt seccomp:unconfined \
+    $user/static_build_keyfinder:$DATE /home/$user/BUILD/build_static.sh
 dc_id="`docker ps -l -q`"
 docker cp $dc_id:/home/$user/BUILD/KeyFinderGui_static/is_KeyFinder/KeyFinder ./KeyFinder
 #docker container rm $dc_id
