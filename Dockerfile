@@ -43,6 +43,7 @@ RUN sh ./get_zlib.sh
 RUN zypper --non-interactive install \
     perl \
     python3 \
+    python \
     which \
     Mesa-libGLESv3-devel \
     Mesa-libGLESv2-devel \
