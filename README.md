@@ -14,3 +14,6 @@
 
 - Clone/Pull this repository.
 - execute ```build_static_binary_in_container.sh``` as a user with sufficient rights to use the docker.service. This scripts builds an image, which contains all the sources,runs the container and compiles the software in the container, and finally copies the executable out of the container.
+
+### Todo
+* refactor versions (e.g. qt-5.11.1) to variables?
